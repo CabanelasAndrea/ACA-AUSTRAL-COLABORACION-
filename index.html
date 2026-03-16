@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Movilidad Segura ACA × Universidad Austral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, .display-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #7c3aed 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .road-line {
+            background: repeating-linear-gradient(
+                90deg,
+                #ffffff 0px,
+                #ffffff 20px,
+                transparent 20px,
+                transparent 40px
+            );
+        }
+    </style>
+<base target="_blank">
+</head>
+<body class="bg-slate-950 text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                </div>
+                <span class="display-font font-bold text-xl tracking-tight">ACA × <span class="text-blue-400">Austral</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+                <a href="#propuesta" class="hover:text-white transition-colors">La Propuesta</a>
+                <a href="#lineas" class="hover:text-white transition-colors">Líneas de Trabajo</a>
+                <a href="#beneficios" class="hover:text-white transition-colors">Beneficios</a>
+                <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
+            </div>
+            <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" 
+                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105">
+                Colaborar
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 hero-gradient opacity-20"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-30"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-1/4 left-10 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span class="text-sm font-medium text-slate-300">Alianza Estratégica 2025</span>
+            </div>
+            
+            <h1 class="display-font text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Laboratorio de <br>
+                <span class="gradient-text">Movilidad Segura</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 font-light">
+                Una propuesta de colaboración entre el <strong class="text-white">Automóvil Club Argentino</strong> 
+                y la <strong class="text-white">Universidad Austral</strong> para transformar la seguridad vial 
+                en Argentina mediante investigación aplicada e innovación tecnológica.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <button onclick="document.getElementById('propuesta').scrollIntoView({behavior: 'smooth'})" 
+                    class="bg-white text-slate-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-slate-200 transition-all transform hover:scale-105 flex items-center gap-2">
+                    Explorar Propuesta
+                    <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                </button>
+                <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" 
+                    class="border border-white/20 bg-white/5 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all">
+                    Contactar Ahora
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="text-4xl font-bold text-blue-400 mb-2">FIA</div>
+                    <div class="text-sm text-slate-400">Federación Internacional del Automóvil</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="text-4xl font-bold text-purple-400 mb-2">3</div>
+                    <div class="text-sm text-slate-400">Líneas de Investigación</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="text-4xl font-bold text-green-400 mb-2">ANSV</div>
+                    <div class="text-sm text-slate-400">Datos Oficiales de Seguridad Vial</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="py-24 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <h2 class="display-font text-4xl md:text-5xl font-bold mb-6">
+                        El Desafío de la <span class="text-red-400">Seguridad Vial</span>
+                    </h2>
+                    <p class="text-lg text-slate-400 mb-6 leading-relaxed">
+                        América Latina enfrenta una crisis de movilidad. Los usuarios vulnerables — 
+                        <strong class="text-white">motociclistas, peatones y ciclistas</strong> — 
+                        concentran la mayoría de víctimas fatales en siniestros viales.
+                    </p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                        El ACA, como miembro de la FIA, impulsa proyectos de investigación técnica 
+                        para revertir esta realidad mediante ciencia de datos e innovación.
+                    </p>
+                    
+                    <div class="flex items-center gap-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl">
+                        <i data-lucide="alert-triangle" class="w-8 h-8 text-red-400 flex-shrink-0"></i>
+                        <p class="text-sm text-red-200">
+                            <strong>Urgencia:</strong> Se necesitan soluciones basadas en evidencia 
+                            para reducir la siniestralidad en la región.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative scroll-reveal">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-20"></div>
+                    <div class="relative bg-slate-800 rounded-3xl p-8 border border-white/10">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center p-4 bg-slate-700/50 rounded-2xl">
+                                <i data-lucide="users" class="w-8 h-8 text-orange-400 mx-auto mb-2"></i>
+                                <div class="text-2xl font-bold text-white">Motociclistas</div>
+                                <div class="text-xs text-slate-400 mt-1">Grupo más expuesto</div>
+                            </div>
+                            <div class="text-center p-4 bg-slate-700/50 rounded-2xl">
+                                <i data-lucide="map-pin" class="w-8 h-8 text-blue-400 mx-auto mb-2"></i>
+                                <div class="text-2xl font-bold text-white">Georreferenciación</div>
+                                <div class="text-xs text-slate-400 mt-1">Puntos críticos</div>
+                            </div>
+                            <div class="text-center p-4 bg-slate-700/50 rounded-2xl">
+                                <i data-lucide="database" class="w-8 h-8 text-green-400 mx-auto mb-2"></i>
+                                <div class="text-2xl font-bold text-white">Big Data</div>
+                                <div class="text-xs text-slate-400 mt-1">ANSV + SIGISVI</div>
+                            </div>
+                            <div class="text-center p-4 bg-slate-700/50 rounded-2xl">
+                                <i data-lucide="hard-hat" class="w-8 h-8 text-yellow-400 mx-auto mb-2"></i>
+                                <div class="text-2xl font-bold text-white">Infraestructura</div>
+                                <div class="text-xs text-slate-400 mt-1">Diseño seguro</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Proposal -->
+    <section id="propuesta" class="py-24 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 road-line opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-blue-400 font-semibold tracking-wider uppercase text-sm">La Propuesta</span>
+                <h2 class="display-font text-4xl md:text-5xl font-bold mt-4 mb-6">
+                    Investigación Aplicada &<br>Formación Técnica
+                </h2>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+                    Un espacio de colaboración para desarrollar herramientas tecnológicas y metodologías 
+                    de diagnóstico que mejoren la seguridad vial en Argentina y la región.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative scroll-reveal">
+                    <div class="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-3xl p-8 h-full hover:border-blue-500/50 transition-all">
+                        <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="bar-chart-3" class="w-7 h-7 text-blue-400"></i>
+                        </div>
+                        <h3 class="display-font text-2xl font-bold mb-4">Análisis de Datos</h3>
+                        <p class="text-slate-400 mb-6">
+                            Procesamiento y visualización de datos de siniestralidad del ANSV. 
+                            Desarrollo de Mapa Nacional de Puntos Críticos para Motociclistas.
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-blue-400"></i>
+                                Georreferenciación de eventos
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-blue-400"></i>
+                                Mapas de riesgo territorial
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-blue-400"></i>
+                                Integración SIGISVI
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative scroll-reveal" style="transition-delay: 100ms;">
+                    <div class="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-3xl p-8 h-full hover:border-purple-500/50 transition-all">
+                        <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="road" class="w-7 h-7 text-purple-400"></i>
+                        </div>
+                        <h3 class="display-font text-2xl font-bold mb-4">Infraestructura Segura</h3>
+                        <p class="text-slate-400 mb-6">
+                            Evaluación de infraestructura vial desde la perspectiva motociclista. 
+                            Desarrollo de manual de buenas prácticas y herramientas de diagnóstico.
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-400"></i>
+                                Diseño geométrico de vías
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-400"></i>
+                                Barreras de contención
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-400"></i>
+                                Señalización horizontal/vertical
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative scroll-reveal" style="transition-delay: 200ms;">
+                    <div class="absolute inset-0 bg-gradient-to-b from-green-500/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-3xl p-8 h-full hover:border-green-500/50 transition-all">
+                        <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="smartphone" class="w-7 h-7 text-green-400"></i>
+                        </div>
+                        <h3 class="display-font text-2xl font-bold mb-4">Herramientas Tecnológicas</h3>
+                        <p class="text-slate-400 mb-6">
+                            Desarrollo de aplicaciones para auditorías viales, formularios georreferenciados 
+                            y dashboards de análisis territorial.
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                                Apps de auditoría vial
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                                Sistemas de visualización
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                                Indicadores de riesgo
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Participation -->
+    <section class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 relative scroll-reveal">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl blur-2xl opacity-20"></div>
+                    <div class="relative bg-slate-800 rounded-3xl p-8 border border-white/10">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 p-4 bg-slate-700/30 rounded-xl border border-white/5">
+                                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="graduation-cap" class="w-6 h-6 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Trabajos Finales de Carrera</h4>
+                                    <p class="text-sm text-slate-400">Proyectos reales de movilidad</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 p-4 bg-slate-700/30 rounded-xl border border-white/5">
+                                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="briefcase" class="w-6 h-6 text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Pasantías Técnicas</h4>
+                                    <p class="text-sm text-slate-400">Vinculación con proyectos FIA</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 p-4 bg-slate-700/30 rounded-xl border border-white/5">
+                                <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="users-2" class="w-6 h-6 text-green-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Proyectos Interdisciplinarios</h4>
+                                    <p class="text-sm text-slate-400">Data science + Ingeniería vial</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-slate-700/30 rounded-xl border border-white/5">
+                                <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="presentation" class="w-6 h-6 text-orange-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Seminarios & Workshops</h4>
+                                    <p class="text-sm text-slate-400">Formación continua</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 md:order-2 scroll-reveal">
+                    <span class="text-purple-400 font-semibold tracking-wider uppercase text-sm">Participación Académica</span>
+                    <h2 class="display-font text-4xl md:text-5xl font-bold mt-4 mb-6">
+                        Formando la Próxima Generación de Especialistas
+                    </h2>
+                    <p class="text-lg text-slate-400 mb-6 leading-relaxed">
+                        Los estudiantes de la Facultad de Ingeniería trabajarán sobre problemáticas reales 
+                        de movilidad, aplicando herramientas de:
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-300 text-sm font-medium">
+                            Data Science
+                        </span>
+                        <span class="px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-sm font-medium">
+                            Análisis Geoespacial
+                        </span>
+                        <span class="px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full text-green-300 text-sm font-medium">
+                            Ingeniería Vial
+                        </span>
+                        <span class="px-4 py-2 bg-orange-500/10 border border-orange-500/20 rounded-full text-orange-300 text-sm font-medium">
+                            Sistemas Complejos
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="beneficios" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-green-400 font-semibold tracking-wider uppercase text-sm">Impacto</span>
+                <h2 class="display-font text-4xl md:text-5xl font-bold mt-4 mb-6">
+                    Beneficios Mutuos
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Universidad -->
+                <div class="bg-gradient-to-b from-blue-900/20 to-slate-800/20 border border-blue-500/20 rounded-3xl p-8 scroll-reveal">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="university" class="w-8 h-8 text-blue-400"></i>
+                    </div>
+                    <h3 class="display-font text-2xl font-bold mb-4 text-blue-300">Para la Universidad</h3>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Acceso a proyectos de investigación aplicada de alto impacto social</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Vinculación con redes internacionales de movilidad (FIA)</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Formación de estudiantes en problemáticas reales con datos oficiales</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ACA -->
+                <div class="bg-gradient-to-b from-purple-900/20 to-slate-800/20 border border-purple-500/20 rounded-3xl p-8 scroll-reveal" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield" class="w-8 h-8 text-purple-400"></i>
+                    </div>
+                    <h3 class="display-font text-2xl font-bold mb-4 text-purple-300">Para el ACA</h3>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Fortalecimiento del rol institucional como actor técnico en seguridad vial</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Desarrollo de herramientas de diagnóstico para proyectos FIA</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Generación de conocimiento aplicado en movilidad segura</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sistema -->
+                <div class="bg-gradient-to-b from-green-900/20 to-slate-800/20 border border-green-500/20 rounded-3xl p-8 scroll-reveal" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="globe" class="w-8 h-8 text-green-400"></i>
+                    </div>
+                    <h3 class="display-font text-2xl font-bold mb-4 text-green-300">Para el Sistema</h3>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Mejores insumos técnicos para la toma de decisiones públicas</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Diagnósticos territoriales de riesgo basados en evidencia</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
+                            <span>Contribución concreta a la reducción de siniestros viales</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Projection -->
+    <section class="py-24 bg-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-900 to-slate-900"></div>
+        
+        <div class="max-w-5xl mx-auto px-6 relative z-10 text-center scroll-reveal">
+            <i data-lucide="globe-2" class="w-16 h-16 text-blue-400 mx-auto mb-6"></i>
+            <h2 class="display-font text-4xl md:text-5xl font-bold mb-6">
+                Proyección Internacional
+            </h2>
+            <p class="text-xl text-slate-400 mb-8 leading-relaxed">
+                El laboratorio se integrará a iniciativas de la <strong class="text-white">Federación Internacional del Automóvil (FIA)</strong>, 
+                posicionando a Argentina como un espacio de desarrollo técnico y académico en materia de movilidad segura.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <div class="px-6 py-3 bg-white/5 border border-white/10 rounded-full text-slate-300 flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-blue-400"></i>
+                    Seguridad Vial
+                </div>
+                <div class="px-6 py-3 bg-white/5 border border-white/10 rounded-full text-slate-300 flex items-center gap-2">
+                    <i data-lucide="leaf" class="w-4 h-4 text-green-400"></i>
+                    Movilidad Sostenible
+                </div>
+                <div class="px-6 py-3 bg-white/5 border border-white/10 rounded-full text-slate-300 flex items-center gap-2">
+                    <i data-lucide="construction" class="w-4 h-4 text-orange-400"></i>
+                    Infraestructura Segura
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section id="contacto" class="py-24 relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="relative bg-gradient-to-br from-blue-600 to-purple-700 rounded-3xl p-8 md:p-16 text-center overflow-hidden scroll-reveal">
+                <!-- Background Pattern -->
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]"></div>
+                
+                <div class="relative z-10">
+                    <h2 class="display-font text-4xl md:text-5xl font-bold mb-6">
+                        Construyamos el Futuro de la Movilidad
+                    </h2>
+                    <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                        Unamos fuerzas para transformar la seguridad vial en Argentina. 
+                        La investigación académica y la experiencia institucional pueden salvar vidas.
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                        <a href="mailto:investigacion@aca.org.ar" 
+                            class="bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-xl flex items-center gap-2">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            Contactar al ACA
+                        </a>
+                        <button onclick="window.print()" 
+                            class="bg-blue-800/50 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-800/70 transition-all flex items-center gap-2">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            Descargar Propuesta
+                        </button>
+                    </div>
+
+                    <div class="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-center items-center gap-8 text-blue-100">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            <span>Automóvil Club Argentino</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="external-link" class="w-5 h-5"></i>
+                            <span>www.aca.org.ar</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="award" class="w-5 h-5"></i>
+                            <span>Miembro FIA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="display-font font-bold text-lg">ACA × Universidad Austral</span>
+            </div>
+            <p class="text-slate-500 text-sm">
+                © 2025 Propuesta de Colaboración Académica. Todos los derechos reservados.
+            </p>
+            <div class="flex gap-4">
+                <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <i data-lucide="linkedin" class="w-5 h-5 text-slate-400"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <i data-lucide="twitter" class="w-5 h-5 text-slate-400"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
